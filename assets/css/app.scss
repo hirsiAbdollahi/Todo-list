@@ -1,0 +1,28 @@
+//importer Font Awesome
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+// variable couleur
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$white: white;
+$black:black;
+
+//variable globale bulma
+$primary: $purple;
+$link:$black;
+$background: $white;
+$table-background-color:$white;
+$table-head-background-color: $purple; 
+$table-head-cell-color: $beige-lighter;
+$table-row-hover-background-color: $purple;
+
+
+tr:hover, a:hover {
+    color: $white;
+  }
+
+//importer Bulma
+@import "~bulma";
