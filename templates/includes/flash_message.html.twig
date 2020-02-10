@@ -1,0 +1,9 @@
+{# Affichage des messages flash #}
+{% for type, message_list in app.flashes %}
+    {% for message in message_list %}
+        <div class="notification is-{{ type }}">
+            <button class="delete" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}

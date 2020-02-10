@@ -9,9 +9,12 @@
   <div class="section">
       <h2 class="title">Tâches </h2>
   </div>
+  
+  {# Affichage des messages flash #}
+  {% include 'includes/flash_message.html.twig' %}
 
   <div class="table-container">
-    <table id= " mytable2" class="table is-responsive  is-bordered  is-fullwidth is-hoverable " >
+    <table class="table is-responsive  is-bordered  is-fullwidth is-hoverable " >
       <thead>
         <tr class=" is-centered ">
           <th>Numero</th>
@@ -25,16 +28,18 @@
         </tr>
       </thead>
       <tbody>
-          <tr >
-          <th > </th>
-          <td> </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a  href="{{ path('edit_task', {id: 1}) }}"><i class="fas fa-edit"></i><a/></td>
-          <td><a onclick="return confirm('Vous etes sur de vouloir supprimer?')" href="{{ path('delete_task', {id: 1}) }}"> <i class="fas fa-trash-alt"></i></a></td>
-        </tr> 
+       {% for task in task_table %}
+      <tr >
+      <th > {{task.id}}</th>
+      <td> {{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.status}} </td>
+      <td>{{task.createdAt|date('d/m/Y')}}</td>
+      <td>{{task.updatedOn|date('d/m/Y')}}</td>
+      <td><a  href="{{ path('edit_task', {id: task.id }) }}"><i class="fas fa-edit"></i><a/></td>
+      <td><a onclick="return confirm('Vous etes sur de vouloir supprimer?')" href="{{ path('delete_task', {id: task.id}) }}"> <i class="fas fa-trash-alt"></i></a></td>
+    </tr> 
+      {% endfor %}
       </tbody>
     </table>
   </div>

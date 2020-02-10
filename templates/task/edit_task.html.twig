@@ -1,0 +1,35 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    Editer une tache
+{% endblock %}
+
+{% block content %}
+<div class="columns is-centered section">
+        <div class="column is-one-third box">
+            <h1 class="title has-text-primary has-text-centered">
+               Modifier une tâche
+            </h1>
+            
+        {{form_start(edit_form)}}
+
+            {{ form_row(edit_form.title, {
+                label: 'Titre de la tache'
+            }) }}
+        
+            {{ form_row(edit_form.description, {
+                label: 'Description'
+            }) }}
+
+            {{ form_row(edit_form.status, {
+                label: 'Statut'
+            }) }}
+
+        <button class="button is-primary is-fullwidth" type="submit">
+                    Enregistrer
+        </button>
+        {{ form_end(edit_form) }}
+     </div>
+  </div>
+
+{% endblock %}

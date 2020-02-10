@@ -1,0 +1,35 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    Creer une tache
+{% endblock %}
+
+{% block content %}
+<div class="columns is-centered section">
+        <div class="column is-one-third box">
+            <h1 class="title has-text-primary has-text-centered">
+               Creer une tâche
+            </h1>
+            
+        {{form_start(task_form)}}
+
+            {{ form_row(task_form.title, {
+                label: 'Titre de la tache'
+            }) }}
+        
+            {{ form_row(task_form.description, {
+                label: 'Description'
+            }) }}
+
+            {{ form_row(task_form.status, {
+                label: 'Statut'
+            }) }}
+
+        <button class="button is-primary is-fullwidth" type="submit">
+                    Enregistrer
+        </button>
+        {{ form_end(task_form) }}
+     </div>
+  </div>
+
+{% endblock %}
